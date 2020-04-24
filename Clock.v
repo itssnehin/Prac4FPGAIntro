@@ -1,14 +1,12 @@
-`timescale 1ns / 1ps
-
-
 
 module WallClock(Clock_1s, reset, seconds, minutes, hours);
 	//inputs - these will depend on your board's constraint files
-    input wire Clock_1s, reset;
+    input wire Clock_1s;
+    input wire reset;
 	//outputs - these will depend on your board's constraint files
-	output [5:0] seconds;
-	output [5:0] minutes;
-	output [4:0] hours;
+	output reg [5:0] seconds;
+	output reg [5:0] minutes;
+	output reg [4:0] hours;
 
 	//Add and debounce the buttons
 	//wire MButton;
@@ -17,9 +15,9 @@ module WallClock(Clock_1s, reset, seconds, minutes, hours);
 	// Instantiate Debounce modules here
 	
 	// registers for storing the time
-	reg [5:0] seconds;
-	reg [5:0] minutes;
-	reg [4:0] hours;
+	//reg [5:0] seconds;
+	//reg [5:0] minutes;
+	//reg [4:0] hours;
 	
     
 	//Initialize seven segment
