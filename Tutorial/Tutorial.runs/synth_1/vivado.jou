@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Apr 25 13:15:06 2020
+# Process ID: 16468
+# Current directory: C:/Users/user/OneDrive - University of Cape Town/A UNI/YEAR 5/EEE4120F High Performance Embedded Systems/Pracs/Vivado Projects/Tutorial/Tutorial.runs/synth_1
+# Command line: vivado.exe -log Tutorial.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Tutorial.tcl
+# Log file: C:/Users/user/OneDrive - University of Cape Town/A UNI/YEAR 5/EEE4120F High Performance Embedded Systems/Pracs/Vivado Projects/Tutorial/Tutorial.runs/synth_1/Tutorial.vds
+# Journal file: C:/Users/user/OneDrive - University of Cape Town/A UNI/YEAR 5/EEE4120F High Performance Embedded Systems/Pracs/Vivado Projects/Tutorial/Tutorial.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Tutorial.tcl -notrace
