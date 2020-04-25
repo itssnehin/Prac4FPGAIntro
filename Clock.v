@@ -1,12 +1,13 @@
+`timescale 1ns / 1ps
 
 module WallClock(Clock_1s, reset, seconds, minutes, hours);
 	//inputs - these will depend on your board's constraint files
-    input wire Clock_1s;
-    input wire reset;
+    input Clock_1s;
+    input reset;
 	//outputs - these will depend on your board's constraint files
-	output reg [5:0] seconds;
-	output reg [5:0] minutes;
-	output reg [4:0] hours;
+	output [5:0] seconds;
+	output [5:0] minutes;
+	output [4:0] hours;
 
 	//Add and debounce the buttons
 	//wire MButton;
@@ -15,9 +16,9 @@ module WallClock(Clock_1s, reset, seconds, minutes, hours);
 	// Instantiate Debounce modules here
 	
 	// registers for storing the time
-	//reg [5:0] seconds;
-	//reg [5:0] minutes;
-	//reg [4:0] hours;
+	reg [5:0] seconds_reg;
+	reg [5:0] minutes_reg;
+    reg [4:0] hours_reg;
 	
     
 	//Initialize seven segment
@@ -31,26 +32,30 @@ module WallClock(Clock_1s, reset, seconds, minutes, hours);
 	//The main logic
 	always @ (posedge (Clock_1s) or posedge (reset)) begin
 		if (reset == 1'b1) begin // if reset btn pressed
-			seconds = 0;
-			minutes = 0;
-			hours = 0;
+			seconds_reg <= 6'd0;
+			minutes_reg <= 6'd0;
+			hours_reg <= 5'd0;
 		end
 		
 		else if (Clock_1s == 1'b1) begin 
-			seconds = seconds + 1; // increment seconds
-			if (seconds == 60) begin
-				seconds = 0; // new mins
-				minutes = minutes + 1;
+			seconds_reg <= seconds + 6'd1; // increment seconds
+			if (seconds_reg == 6'd60) begin
+				seconds_reg <= 6'd0; // new mins
+				minutes_reg <= minutes_reg + 6'd1;
 				
-				if (minutes == 60) begin // new hour
-					minutes = 0;
-					hours = hours + 1;
+				if (minutes == 6'd60) begin // new hour
+					minutes_reg <= 6'd0;
+					hours_reg <= hours + 5'd1;
 					
-					if (hours == 24) begin // new day
-						hours = 0;
+					if (hours == 5'd24) begin // new day
+						hours_reg <= 5'd0;
 					end
 				end
 			end
 		end
-	end	
+	end
+	
+	assign seconds = seconds_reg;
+	assign minutes = minutes_reg;
+	assign hours = hours_reg;	
 endmodule  
