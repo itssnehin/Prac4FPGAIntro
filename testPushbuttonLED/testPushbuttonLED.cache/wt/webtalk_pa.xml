@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Apr 25 14:13:09 2020">
+<application name="pa" timeStamp="Sat Apr 25 15:14:47 2020">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="e6e48c4569194aa68929f2861bf6c308" type="ProjectID"/>
-<property name="ProjectIteration" value="8" type="ProjectIteration"/>
+<property name="ProjectIteration" value="9" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -21,10 +21,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CloseProject" value="3" type="JavaHandler"/>
 <property name="EditDelete" value="3" type="JavaHandler"/>
 <property name="EditSimulationSets" value="2" type="JavaHandler"/>
-<property name="OpenProject" value="2" type="JavaHandler"/>
+<property name="OpenProject" value="5" type="JavaHandler"/>
 <property name="RunBitgen" value="1" type="JavaHandler"/>
-<property name="RunImplementation" value="6" type="JavaHandler"/>
-<property name="RunSynthesis" value="10" type="JavaHandler"/>
+<property name="RunImplementation" value="7" type="JavaHandler"/>
+<property name="RunSynthesis" value="11" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="1" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
 <property name="ShowView" value="7" type="JavaHandler"/>
@@ -33,13 +33,13 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Gui Handlers">
 <property name="BaseDialog_CANCEL" value="2" type="GuiHandlerData"/>
-<property name="BaseDialog_OK" value="41" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="45" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_OPEN_MESSAGES_VIEW" value="5" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="2" type="GuiHandlerData"/>
 <property name="ExpReportsView_COLLAPSE_ALL" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="84" type="GuiHandlerData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="17" type="GuiHandlerData"/>
-<property name="GettingStartedView_OPEN_PROJECT" value="2" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="89" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="18" type="GuiHandlerData"/>
+<property name="GettingStartedView_OPEN_PROJECT" value="5" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_FIT" value="1" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_IN" value="7" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_OUT" value="4" type="GuiHandlerData"/>
@@ -68,7 +68,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="7" type="GuiHandlerData"/>
 <property name="PAViews_CODE" value="6" type="GuiHandlerData"/>
 <property name="PAViews_DEVICE" value="6" type="GuiHandlerData"/>
-<property name="PAViews_PROJECT_SUMMARY" value="3" type="GuiHandlerData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="4" type="GuiHandlerData"/>
 <property name="RDICommands_DELETE" value="3" type="GuiHandlerData"/>
 <property name="RDIViews_WAVEFORM_VIEWER" value="18" type="GuiHandlerData"/>
 <property name="RemoveSourcesDialog_ALSO_DELETE" value="1" type="GuiHandlerData"/>

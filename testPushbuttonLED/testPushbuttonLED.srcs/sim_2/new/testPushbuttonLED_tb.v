@@ -22,17 +22,17 @@
 // Testbench verilog code for debouncing a pushbutton to toggle an LED
 module testPushbuttonLED_tb();
 // inputs
-reg BTNL;       // pushbutton connected to pin P17
-reg CLK100MHZ;
+reg BTNL = 0;       // pushbutton connected to pin P17
+reg CLK100MHZ = 0;
 
 // Outputs
-wire [1:0] LED;
+wire [1:0] LED = 0;
 
 // Instantiate the debouncing verilog code
 testPushbuttonLED DUT (                     // This instance of the module is named DUT meaning Device Under Test
     .BTNL(BTNL),
     .CLK100MHZ(CLK100MHZ),
-    .LED(LED[0])
+    .LED(LED)
 );
 
 /*

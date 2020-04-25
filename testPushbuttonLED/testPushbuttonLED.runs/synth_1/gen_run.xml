@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1587816730">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1587820218">
   <File Type="PA-TCL" Name="testPushbuttonLED.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="testPushbuttonLED_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="testPushbuttonLED_reports.tcl"/>
