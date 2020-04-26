@@ -23,7 +23,6 @@ module tb_WallClock(
 	);
 	
 	initial counter = 27'd0;
-	//always #50000000 Clock_1s = ~Clock_1s; // toggle clock every 0.5 seconds
 	assign CLK1HZ = CLK1HZ_reg;
 	
 	 

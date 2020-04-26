@@ -32,7 +32,7 @@ module Debounce(
 */
 
 reg previous_state;         
-reg [21:0]Count;            //assume count is null on FPGA configuration
+reg [21:0]Count;           // Deadtime counter //assume count is null on FPGA configuration
     
 initial begin
 previous_state = 0;         // give the previous_state an initial value of 0 meaning not pressed

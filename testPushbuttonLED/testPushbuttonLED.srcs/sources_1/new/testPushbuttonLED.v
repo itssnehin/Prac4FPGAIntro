@@ -32,13 +32,13 @@ module testPushbuttonLED(
 */
 
 reg previous_state;         
-reg [21:0]Count;            //assume count is null on FPGA configuration
+reg [21:0]Count;           //Deadtime counter //assume count is null on FPGA configuration
     
 initial begin
-previous_state = 0;         // give the previous_state an initial value of 0 meaning not pressed
+previous_state = 1'b1;      // give the previous_state an initial value of 0 meaning not pressed
 Count = 22'd0;              // initialize the Count register to a decimal value of 0 that is 22 bits wide
-LED[1] = 0;
-LED[0] = 0;
+LED[1] = 1'b0;
+LED[0] = 1'b0;
 end
 
 /*  The deadtime is related to size of the counter and the clock frequency by
@@ -58,8 +58,8 @@ begin
     
     else                                            // button has been pressed
         LED[0] <= ~previous_state;                  // change the state of the output
-        Count <= 0;                                 // reset count
-        Count <= (Count >= 4194303)? 0:Count+1;     // the highest value that can be represented by the 22 bit Count is 4194303 (Highest val = (2^N) -1)
+        Count <= 22'd0;                                 // reset count
+        Count <= (Count >= 4194303)? 22'd0:Count+1;     // the highest value that can be represented by the 22 bit Count is 4194303 (Highest val = (2^N) -1)
                                                     // functions similar to if else block
     previous_state = ~previous_state;               // update the previous_state variable
 end 

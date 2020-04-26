@@ -22,11 +22,11 @@
 // Testbench verilog code for debouncing a pushbutton to toggle an LED
 module testPushbuttonLED_tb();
 // inputs
-reg BTNL = 0;       // pushbutton connected to pin P17
-reg CLK100MHZ = 0;
+reg BTNL = 1'b0;       // pushbutton connected to pin P17
+reg CLK100MHZ = 1'b0;
 
 // Outputs
-wire [1:0] LED = 0;
+wire [1:0] LED = 1'b00;     // since 2 LED's the value's width needs to be 2 as well
 
 // Instantiate the debouncing verilog code
 testPushbuttonLED DUT (                     // This instance of the module is named DUT meaning Device Under Test
@@ -49,42 +49,20 @@ end
 
 
 initial begin
-    BTNL = 0;
+    BTNL = 1'b0;
     #10;                // 10ns delay
-    BTNL = 1;
+    BTNL = 1'b1;
     #20;
-    BTNL = 0;
+    BTNL = 1'b0;
     #10;
-    BTNL = 1;
+    BTNL = 1'b1;
     #30;
-    BTNL = 0;
+    BTNL = 1'b0;
     #10;
-    BTNL = 1;
+    BTNL = 1'b1;
     #40;
-    /*
-    BTNL = 0;
+    BTNL = 1'b0;
     #10;
-    BTNL = 1;
-    #30;
-    BTNL = 0;
-    #10;
-    BTNL = 1;
-    #400;
-    BTNL = 0;
-    #10;
-    BTNL = 1;
-    #20;
-    BTNL = 0;
-    #10;
-    BTNL = 1;
-    #30;
-    BTNL = 0;
-    #10;
-    BTNL = 1;
-    #40;
-    BTNL = 0;
-    */
-    //$finish             //This line tells the simulator we are done simulating
 end
 
 endmodule
