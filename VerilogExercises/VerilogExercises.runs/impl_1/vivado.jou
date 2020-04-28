@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Apr 28 15:26:52 2020
+# Process ID: 2732
+# Current directory: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.runs/impl_1
+# Command line: vivado.exe -log counter.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source counter.tcl -notrace
+# Log file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.runs/impl_1/counter.vdi
+# Journal file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source counter.tcl -notrace
