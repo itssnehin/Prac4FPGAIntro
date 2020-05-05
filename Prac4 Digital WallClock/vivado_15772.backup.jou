@@ -1,0 +1,106 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Apr 26 10:57:42 2020
+# Process ID: 15772
+# Current directory: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8204 C:\Users\user\OneDrive - University of Cape Town\A UNI\GitHub\EEE4120F-Labs\Prac4 Vivado\Prac4FPGAIntro\Prac4 Digital WallClock\Prac4 Digital WallClock.xpr
+# Log file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/vivado.log
+# Journal file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.xpr}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_simulation
+source tb_WallClock.tcl
+relaunch_sim
+run 5 s
+run 10 us
+relaunch_sim
+close_sim
+launch_simulation
+source tb_WallClock.tcl
+close_sim
+launch_simulation
+source tb_WallClock.tcl
+run 5 s
+relaunch_sim
+run 5 s
+relaunch_sim
+run 3 s
+run 2 s
+relaunch_sim
+run 2 s
+run 3 s
+run 3 s
+run 3 s
+close_sim
+launch_simulation
+source tb_WallClock.tcl
+run 10 us
+relaunch_sim
+run 10 us
+close_sim
+close_project
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_simulation -simset [get_filesets sim_2 ]
+source testPushbuttonLED_tb.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+source testPushbuttonLED_tb.tcl
+close_sim
+close_project
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.xpr}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sources_1/new/betterDebounce.v} w ]
+add_files {{C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sources_1/new/betterDebounce.v}}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sources_1/new/top.v} w ]
+add_files {{C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sources_1/new/top.v}}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_2]
+close [ open {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sim_2/new/top_tb.v} w ]
+add_files -fileset sim_2 {{C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.srcs/sim_2/new/top_tb.v}}
+update_compile_order -fileset sim_2
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_tb [get_filesets sim_2]
+set_property top_lib xil_defaultlib [get_filesets sim_2]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_2
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_simulation -simset [get_filesets sim_2 ]
+source top_tb.tcl
+close_sim

@@ -1,11 +1,11 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ps        // set timescale and precision
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date: 22.04.2020 13:00:31
+// Create Date: 29.04.2020 14:15:40
 // Design Name: 
-// Module Name: testPushbuttonLED
+// Module Name: Debounce
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,49 +19,102 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+/* Description: WORKING IMPLEMENTATION!!!
+1 Problem: Dont think the formula for calculating register size for specific debounce time delay is accurate
+for N=9 get debounce delay = 10.34us instead of 5.12us
 
-module Debounce(
-    input CLK100MHZ, 
-    input BTNL,             // pushbutton BTNL->pin P17
-    output reg DB_out
-);
+Full code explanation available at:
+http://referencedesigner.com/blog/key-debounce-implementation-in-verilog/2649/
 
-/*  The five pushbuttons arranged in a plus-sign configuration are "momentary" switches that normally generate a low output when they are at rest, 
-    and a high output only when they are pressed. 
-    The red pushbutton labeled "CPU RESET," on the other hand, generates a high output when at rest and a low output when pressed
+Pushbutton debounce module that makes use of two DFF's (D-type Flip Flops) to store logic levels of button_input during two consecutive clock periods
+See bottom of file for code explanation
+
 */
 
-reg previous_state;         
-reg [21:0]Count;           // Deadtime counter //assume count is null on FPGA configuration
-    
-initial begin
-previous_state = 0;         // give the previous_state an initial value of 0 meaning not pressed
-Count = 22'd0;              // initialize the Count register to a decimal value of 0 that is 22 bits wide
-DB_out = 0;
-end
 
-/*  The deadtime is related to size of the counter and the clock frequency by
+module  Debounce(
+    // inputs
+    input   clk, button_reset, button_in,
+    // outputs
+    output reg DB_out
+    );
+    
+    parameter N =22 ;                   // parameter that controls debounce time by defining number of bits in counter register 
+                                        // parameter can be given a different value when module is called/instantiated
+    
+    /*  
+    Parameter N defines the debounce time/ deadtime.
+    The deadtime is related to size of the counter and the clock frequency by
     deadtime = (2^N  +2)/f_clk      approximated to     deadtime = (2^N)/f_clk
     
     where N is the number of bits in the counter register
     
-    the 22 bit counter register above produces a deadtime of 41,94 ms when f_clk = 100 MHz
-*/
-
-//--------------------------------------------
-always @(posedge CLK100MHZ)
-begin 
-    // implement your logic here
-    if(BTNL == previous_state)                    // button has not been pressed
-        DB_out <= previous_state;
+    a 22 bit counter register produces a deadtime of 41,94 ms when f_clk = 100 MHz
+    */
     
-    else                                            // button has been pressed
-        DB_out <= ~previous_state;                  // change the state of the output
-        Count <= 0;                                 // reset count
-        Count <= (Count >= 4194303)? 0:Count+1;     // the highest value that can be represented by the 22 bit Count is 4194303 (Highest val = (2^N) -1)
-                                                    // functions similar to if else block
-    previous_state = ~previous_state;               // update the previous_state variable
-end 
-
+    
+    reg  [N-1 : 0]  delaycount_reg;                     
+    reg  [N-1 : 0]  delaycount_next;
+     
+    reg DFF1, DFF2;                                 
+    wire q_add;                                     
+    wire q_reset;
+ 
+    always @ ( posedge clk )
+    begin
+        if(button_reset ==  1'b0)                        // At reset initialize FF's and counter register
+            begin
+                DFF1 <= 1'b0;
+                DFF2 <= 1'b0;
+                delaycount_reg <= { N {1'b0} };     // writes 1'b0 N times..... equivalent to delaycount_reg <= 22'b0; for N=22   
+            end
+        else
+            begin
+                DFF1 <= button_in;
+                DFF2 <= DFF1;
+                delaycount_reg <= delaycount_next;  // value of delaycount_reg depends on next logic state, explained later
+            end
+    end
+     
+     
+    assign q_reset = (DFF1  ^ DFF2);                // XOR the two flip flops on consecutive clock cycles to detect a level change on button_in 
+                                      
+    assign  q_add = ~(delaycount_reg[N-1]);         // Check if counter register has reached its max value (i.e. debounce time has elapsed) 
+                                                    // by checking MSB of delaycount_reg
+    /*                                                
+    // if q_add == 1 delaycount_reg has NOT reached its max value, therefore continue to increment it
+    // if q_add == 0 delaycount_reg has reached its max value, therefore reset it     
+    */ 
+ 
+    always @ ( q_reset, q_add, delaycount_reg)
+        begin
+            case( {q_reset , q_add})
+                2'b00 : // Case when no button change and counter reaches max value
+                        /* If button_in stays same ( q_reset stays 0), and counter's MSB becomes 1 ( q_add is 0), 
+                        // delaycount_next is assigned the value of delaycount_reg;
+                        // ( Question to readers - can we assign 0 to delacount_next )
+                        */
+                        delaycount_next <= delaycount_reg;
+                        
+                2'b01 : // Case when no button change and counter does NOT reach max value
+                        // If button_in stays the same ( q_reset stays 0), and counter's MSB is still not 1 ( q_add is 1), increment delaycount_next
+                        delaycount_next <= delaycount_reg + 1;
+                        
+                default : // Case when button level changes
+                        // In this case q_reset = 1 => change in level. Reset the counter 
+                        // If button_in changes its value, q_reset becomes 1, and therefore reset the delaycount_next to 0.
+                        delaycount_next <= { N {1'b0} };
+            endcase    
+        end
+     
+    // Finally, the debounce output DB_out is assigned the value of DFF2 if the MSB of the counter becomes 1.
+    // Else, it retains its previous value. 
+    always @ ( posedge clk )
+        begin
+            if(delaycount_reg[N-1] == 1'b1)
+                    DB_out <= DFF2;
+            else
+                    DB_out <= DB_out;
+        end
+         
 endmodule
-

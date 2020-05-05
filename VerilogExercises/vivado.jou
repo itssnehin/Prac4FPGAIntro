@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat May  2 15:11:54 2020
+# Process ID: 11276
+# Current directory: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23100 C:\Users\user\OneDrive - University of Cape Town\A UNI\GitHub\EEE4120F-Labs\Prac4 Vivado\Prac4FPGAIntro\VerilogExercises\VerilogExercises.xpr
+# Log file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/vivado.log
+# Journal file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.xpr}
+update_compile_order -fileset sources_1
+close_project
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.xpr}
+update_compile_order -fileset sources_1

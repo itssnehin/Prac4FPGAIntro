@@ -22,7 +22,9 @@
 // testbench for 4-bit up counter
 
 module counter_tb();
+  //inputs
   reg clk, reset, enable;
+  //outputs
   wire [3:0] count;
   
   //instantiate DUT (design under test)
