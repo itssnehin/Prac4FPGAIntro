@@ -1,6 +1,8 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4FPGAIntro-Snehin/Clock.v" \
+"../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Debounce.v" \
+"../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Delay_Reset.v" \
 "../../../../Prac4 Digital WallClock.srcs/sim_1/imports/Prac4FPGAIntro-Snehin/Clock_tb.v" \
 
 # compile glbl module

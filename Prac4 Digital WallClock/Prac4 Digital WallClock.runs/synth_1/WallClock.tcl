@@ -29,7 +29,11 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.0 [current_project]
 set_property ip_output_repo {c:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib {{C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4FPGAIntro-Snehin/Clock.v}}
+read_verilog -library xil_defaultlib {
+  {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Debounce.v}
+  {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Delay_Reset.v}
+  {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4FPGAIntro-Snehin/Clock.v}
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

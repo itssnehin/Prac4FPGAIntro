@@ -1,0 +1,4 @@
+Running: xsim.dir/ButtonIncrement_tb_behav/xsimk.exe -simmode gui -wdb ButtonIncrement_tb_behav.wdb -simrunnum 0 -socket 56267
+Design successfully loaded
+Design Loading Memory Usage: 5836 KB (Peak: 5836 KB)
+Design Loading CPU Usage: 140 ms

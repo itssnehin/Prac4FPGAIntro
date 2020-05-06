@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4FPGAIntro-Snehin/Clock.v" \
+"../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Debounce.v" \
+"../../../../Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Delay_Reset.v" \
+"../../../../Prac4 Digital WallClock.srcs/sim_1/new/ButtonIncrement_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

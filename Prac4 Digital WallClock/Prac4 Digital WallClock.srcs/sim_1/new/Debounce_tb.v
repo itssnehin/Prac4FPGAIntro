@@ -34,9 +34,11 @@ See bottom of file for code explanation
 */
 
 module Debounce_tb();
+    // inputs
     reg CLK100MHZ;
     reg BTNC;
     reg BTNL;
+    // outputs
     wire DB_out;
  
     Debounce #(.N(22))                // redefine the parameter N to N=22 to get debounce delay of instead of 41.94ms which the formula says we should get
