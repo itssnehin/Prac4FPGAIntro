@@ -21,7 +21,7 @@
 
 
 module ButtonIncrement_tb();
-// inputs
+    // inputs
 	reg CLK100MHZ;
 	//reg CLK1HZ;                                         // equivalent to Clock_1s in Clock.v
     reg ButtonReset;                //ButtonReset;      // Reset button
@@ -34,7 +34,7 @@ module ButtonIncrement_tb();
 	//wire [4:0] hours;
 	
 	// to be used by buttons that increment minutes and hours
-	wire [5:0] secondsTensUnits;
+	//wire [5:0] secondsTensUnits;
 	wire [3:0] minutesUnits;
 	wire [3:0] minutesTens;
 	wire [3:0] hoursUnits;
@@ -47,10 +47,14 @@ module ButtonIncrement_tb();
 		.CLK100MHZ(CLK100MHZ),
 		.BTNC(ButtonReset),
 		.BTNR(ButtonMins),
-		.BTNL(ButtonHours)
+		.BTNL(ButtonHours),
 		//.seconds(seconds),
 		//.minutes(minutes),
 		//.hours(hours)
+		.minutesUnits(minutesUnits),
+		.minutesTens(minutesTens),
+		.hoursUnits(hoursUnits),
+		.hoursTens(hoursTens)
 	);
 	
 	

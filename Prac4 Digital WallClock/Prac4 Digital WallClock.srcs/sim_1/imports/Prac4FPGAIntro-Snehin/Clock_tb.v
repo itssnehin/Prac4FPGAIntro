@@ -37,9 +37,19 @@ module tb_WallClock(
 	wire [5:0] minutes;
 	wire [4:0] hours;
 	
+	// to be used by buttons that increment minutes and hours
+	wire [3:0] minutesUnits;
+	wire [3:0] minutesTens;
+	wire [3:0] hoursUnits;
+	wire [3:0] hoursTens;
+	
 	// other
 	reg [26:0] counter = 0;        // 26 bit counter for clock
 	//wire CLK1HZ;
+	
+	// registers to store buttons previous state
+    wire ButtonMins_DB_prev;;         // unpressed button is high
+    wire ButtonHours_DB_prev;         // unpressed button is high
 
 	// instantiate
 	WallClock uut (
@@ -50,9 +60,17 @@ module tb_WallClock(
 		.BTNL(ButtonHours),
 		.seconds(seconds),
 		.minutes(minutes),
-		.hours(hours)
+		.hours(hours),
+		.minutesUnits(minutesUnits),
+		.minutesTens(minutesTens),
+		.hoursUnits(hoursUnits),
+		.hoursTens(hoursTens)
 	);
-	
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// uncomment this block to test the main clock logic
+/*	
 	initial begin
 	   CLK1HZ = 0;
 	   CLK100MHZ = 0;
@@ -66,15 +84,15 @@ module tb_WallClock(
 		#100
 		ButtonReset <= 0;
 	end
-	
+*/	
+    /*
+    //since the CLK100MHZ clock has a period = 10ns, therefore a posedge occurs every 10ns
+	//we want a 1Hz clock (period = 1sec),
+	//but since a cycle consists of 1 rising edge and 1 falling edge, the clock needs to be toggled twice to form 1 cycle
+	//therefore 50e6 * 20ns = 1sec 
+	/therefore need 50e6 CLK100MHZ cycles to pass, use a delay that increments once every cycle and counts up to 50e6
+    */
 /*
-    since the CLK100MHZ clock has a period = 10ns, therefore a posedge occurs every 10ns
-	we want a 1Hz clock (period = 1sec),
-	but since a cycle consists of 1 rising edge and 1 falling edge, the clock needs to be toggled twice to form 1 cycle
-	therefore 50e6 * 20ns = 1sec 
-	therefore need 50e6 CLK100MHZ cycles to pass, use a delay that increments once every cycle and counts up to 50e6
-*/
-
 	// this creates a slower clock (period = 1sec) 
 	always @ (posedge CLK100MHZ) begin
 	   counter <= counter + 27'd1;
@@ -85,8 +103,41 @@ module tb_WallClock(
 	   end
 	end
 	
+*/	
+	
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// uncomment this block to test the button increment code
+
+	initial begin
+	   //CLK1HZ = 0;
+	   CLK100MHZ = 0;
+	   //ButtonReset = 1'd1;
+	   ButtonMins = 1'd1;
+	   ButtonHours = 1'd1;
+	   
+	   #100e6 ButtonMins = 1'd0;   //100ms
+	   #20e6 ButtonMins  = 1'd1; 
+	   #30e6 ButtonMins  = 1'd0;
+	   #50e6 ButtonMins  = 1'd1;
+	         ButtonHours = 1'd0;
+	   #20e6 ButtonHours  = 1'd1;
+	   #30e6 ButtonHours  = 1'd0;
+	   #50e6 ButtonHours  = 1'd1;
+	   
+	   $finish;
+	end
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
 	always begin
         #10 CLK100MHZ = ~CLK100MHZ;  // toggle clock every 10ns
     end
+
 
 endmodule

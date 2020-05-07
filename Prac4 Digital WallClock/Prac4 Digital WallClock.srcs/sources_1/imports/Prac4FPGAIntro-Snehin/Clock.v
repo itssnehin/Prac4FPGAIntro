@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module WallClock(Clock_1s, CLK100MHZ, BTNC, BTNR, BTNL, seconds, minutes, hours);
+module WallClock(Clock_1s, CLK100MHZ, BTNC, BTNR, BTNL, seconds, minutes, hours, secondsTensUnits, minutesUnits, minutesTens, hoursUnits, hoursTens);
 	//inputs - these will depend on your board's constraint files
 	input Clock_1s;                                     // Slowed down clock (period = 1sec)
     input CLK100MHZ;                                    // System clock (period = 10ns)      
@@ -12,6 +12,12 @@ module WallClock(Clock_1s, CLK100MHZ, BTNC, BTNR, BTNL, seconds, minutes, hours)
 	output [5:0] seconds;
 	output [5:0] minutes;
 	output [4:0] hours;
+	
+	output [5:0] secondsTensUnits;
+	output [3:0] minutesUnits;
+	output [3:0] minutesTens;
+	output [3:0] hoursUnits;
+	output [3:0] hoursTens;
 //-------------------------------------------------------------------------------------------------------------------------
 	
 	// registers for storing the time
@@ -176,7 +182,8 @@ end
 		end
 	end
 	
-	assign seconds = seconds_reg;                        // assign time register values to outputs
+	// assign time register values to outputs
+	assign seconds = seconds_reg;
 	assign minutes = minutes_reg;
 	assign hours   = hours_reg;	
 endmodule  
