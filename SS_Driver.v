@@ -2,7 +2,7 @@ module SS_Driver(
     input Clk, Reset,
     input [3:0] BCD3, BCD2, BCD1, BCD0, // Binary-coded decimal input
     output reg [3:0] SegmentDrivers, // Digit drivers (active low)
-    output reg [7:0] SevenSegment // Segments (active low)
+    output reg [6:0] SevenSegment // Segments (active low)
 );
 
 
@@ -26,7 +26,7 @@ end
 
 //------------------------------------------------------------------------------
 always @(*) begin // This describes a purely combinational circuit
-    SevenSegment[7] <= 1'b1; // Decimal point always off
+    SevenSegment[7] <= 'b1; // Decimal point always off
     if (Reset) begin
         SevenSegment[6:0] <= 7'h7F; // All off during Reset
     end else begin
