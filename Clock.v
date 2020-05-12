@@ -8,6 +8,7 @@ module Clock(
      input BTNR,
      input BTNL,
      input BTNC,
+     input [7:0] SW,
 	//outputs - these will depend on your board's constraint files
 	   output [3:0] AN,
 	   output [6:0] SEG,
@@ -21,8 +22,6 @@ module Clock(
 	wire MButton;
 	wire HButton;
 	
-	// Instantiate Debounce modules here
-	
 	// registers for storing the time
 	reg[29:0]count = 30'b0;
     reg [5:0] secs = 6'b0;
@@ -35,6 +34,9 @@ module Clock(
     
     parameter speed = 100000000;
     
+    //pwm 
+    reg [7:0] pwm_in =0;
+    
     //Delay
     Delay_Reset dr1(CLK100MHZ,BTNR,reset);  
     Debounce dMins(CLK100MHZ,BTNL, MButton);
@@ -42,14 +44,12 @@ module Clock(
 	//Initialize seven segment
 	// You will need to change some signals depending on you constraints
 	SS_Driver SS_Driver1(
-		CLK100MHZ, reset,
+		CLK100MHZ, reset, pwm_in,
 		hours2, hours1, mins2, mins1, // Use temporary test values before adding hours2, hours1, mins2, mins1
 		AN, SEG
 	);
 	
-	//minutes button
-	
-	
+
 	//The main logic
 	always @(posedge CLK100MHZ) begin
 		count <= count + 1'b1;
@@ -120,6 +120,33 @@ module Clock(
 	       mins1 <= 0;
 	       mins2 <= 0;
 	   end
+	   
+	   //switches
+	   if(SW[0] == 1'b1)begin 
+	       pwm_in <= 4;
+	   end 
+	   if(SW[1] == 1'b1) begin 
+	       pwm_in <= 16;
+	   end
+	   if(SW[2] == 1'b1) begin 
+	       pwm_in <= 32;
+	   end
+	   if(SW[3] == 1'b1) begin 
+	       pwm_in <= 50;
+	   end
+	   if(SW[4] == 1'b1) begin 
+	       pwm_in <= 100;
+	   end
+	   if(SW[5] == 1'b1) begin 
+	       pwm_in <= 150;
+	   end
+	   if(SW[6] == 1'b1) begin 
+	       pwm_in <= 200;
+	   end
+	    if(SW[7] == 1'b1) begin 
+	       pwm_in <= 255;
+	   end
+	   
 		LED[0] <= secs[0];
         LED[1] <= secs[1];
         LED[2] <= secs[2];

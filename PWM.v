@@ -23,9 +23,10 @@ module PWM(
     input [7:0] pwm_in, 
     output reg pwm_out 	//output of PWM	
 );
-	
+reg [7:0] counter = 0;	
 always @(posedge clk) begin
-    //Write your implementation here	
+    counter <= counter + 1;
+    pwm_out <= (counter < pwm_in);	
 end
 	
 endmodule
