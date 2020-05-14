@@ -2,6 +2,10 @@
 2019.1
 May 24 2019
 15:06:07
-C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
-C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.srcs/sim_1/new/upcounter4bit_tb.v,1588080065,verilog,,,,counter_tb,,,,,,,,
-C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.srcs/sources_1/new/upcounter4bit.v,1588079962,verilog,,C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/VerilogExercises/VerilogExercises.srcs/sim_1/new/upcounter4bit_tb.v,,counter,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/Increment_tb.v,1588958439,verilog,,,,Increment_tb,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/buttonCounter_tb.v,1588956356,verilog,,,,buttonCounter_tb,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/upcounter4bit_tb.v,1588949665,verilog,,,,counter_tb,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sources_1/new/Increment.v,1588958632,verilog,,C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/Increment_tb.v,,Increment,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sources_1/new/buttonCounter.v,1588956836,verilog,,C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/buttonCounter_tb.v,,buttonCounter,,,,,,,,
+C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sources_1/new/upcounter4bit.v,1588079962,verilog,,C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/VerilogExercises/VerilogExercises.srcs/sim_1/new/buttonCounter_tb.v,,counter,,,,,,,,

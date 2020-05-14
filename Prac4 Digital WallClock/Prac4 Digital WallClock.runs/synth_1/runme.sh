@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log WallClock.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source WallClock.tcl
+EAStep vivado -log Increment.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Increment.tcl

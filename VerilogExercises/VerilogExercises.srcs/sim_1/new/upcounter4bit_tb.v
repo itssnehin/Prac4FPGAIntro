@@ -39,7 +39,7 @@ initial begin
   // $dumpfile("dump.vcd" $dumpvars(1););	// for plotting
   
   //display column headings 
-  $display("\t\t\ttime, \tclk, \treset, \tenable, \tcount");	// \t means tab
+  $display("\t\t\t\ttime, \tclk, \treset, \tenable, \tcount");	// \t means tab
   
   // setup a monitor routine for pins of interest
   $monitor("\t%d, \t%b, \t%b, \t%b, \t%d", $time, clk, reset, enable, count);

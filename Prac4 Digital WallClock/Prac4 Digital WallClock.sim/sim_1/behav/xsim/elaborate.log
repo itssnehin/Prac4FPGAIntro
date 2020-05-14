@@ -3,6 +3,13 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d762730c71bd46fface6357efa20856a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Increment_tb_behav xil_defaultlib.Increment_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-ERROR: [VRFC 10-3180] cannot find port 'ButtonHours_DB_prev' on this module [C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sim_1/new/Increment_tb.v:52]
-ERROR: [VRFC 10-3180] cannot find port 'ButtonMins_DB_prev' on this module [C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sim_1/new/Increment_tb.v:51]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Delay_Reset
+Compiling module xil_defaultlib.Debounce
+Compiling module xil_defaultlib.Increment
+Compiling module xil_defaultlib.Increment_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Increment_tb_behav

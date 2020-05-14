@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue May  5 11:46:26 2020
+# Process ID: 21144
+# Current directory: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10016 C:\Users\user\OneDrive - University of Cape Town\A UNI\GitHub\EEE4120F-Labs\Prac4 Vivado\Prac4FPGAIntro\Prac4 Digital WallClock\Prac4 Digital WallClock.xpr
+# Log file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/vivado.log
+# Journal file: C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.xpr}
+update_compile_order -fileset sources_1
+close_project
+open_project {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/testPushbuttonLED/testPushbuttonLED.xpr}
+update_compile_order -fileset sources_1
+launch_simulation -simset [get_filesets sim_2 ]
+source top_tb.tcl
+close_sim

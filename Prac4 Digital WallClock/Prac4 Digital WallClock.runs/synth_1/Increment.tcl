@@ -32,7 +32,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Debounce.v}
   {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4/Delay_Reset.v}
-  {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/imports/Prac4FPGAIntro-Snehin/Clock.v}
+  {C:/Users/user/OneDrive - University of Cape Town/A UNI/GitHub/EEE4120F-Labs/Prac4 Vivado/Prac4FPGAIntro/Prac4 Digital WallClock/Prac4 Digital WallClock.srcs/sources_1/new/Increment.v}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,12 +48,12 @@ set_property used_in_implementation false [get_files {{C:/Users/user/OneDrive - 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top WallClock -part xc7a100tcsg324-1
+synth_design -top Increment -part xc7a100tcsg324-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef WallClock.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file WallClock_utilization_synth.rpt -pb WallClock_utilization_synth.pb"
+write_checkpoint -force -noxdef Increment.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file Increment_utilization_synth.rpt -pb Increment_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-			time, 	clk, 	reset, 	enable, 	count
+				time, 	clk, 	reset, 	button, 	count
 	                   0, 	0, 	0, 	0, 	 x
 	                   5, 	1, 	1, 	0, 	 0
 	                  10, 	0, 	0, 	1, 	 0
